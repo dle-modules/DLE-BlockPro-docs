@@ -16,8 +16,9 @@ jobs:
       - name: deploy file
         uses:  swznd/sftp-deploy@master
         with:
-          host: ${{ secrets.IP_PROD_SERVER }}
-          user: username
-          private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          remote_path: /home/username/app
+          host: ${{ secrets.SERVER_ADDRESS }}
+          user: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          #private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          remote_path: ${{ secrets.SFTP_PATH }}
           ignore: .github/**,.gitignore,**/.gitignore,package.json,package-lock.json
