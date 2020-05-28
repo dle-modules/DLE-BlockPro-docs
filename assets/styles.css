@@ -1,0 +1,44 @@
+:root {
+	--base-font-size: 16px;
+	--theme-color: #4b9fc5;
+
+	--base-background-color: #fff;
+	--base-color: #495057;
+	--base-line-height: 1.4;
+	--link-color: var(--theme-color);
+	--link-color--hover: #0ca678;
+
+	--copycode-background: #4b9fc5;
+	--code-theme-background: #f8f9fa;
+	--code-block-padding: .8em 1.5em .8em 1em;
+
+	--notice-important-border-color: #f1c40f;
+	--notice-important-background: rgba(241,196,15,0.1);
+	--notice-important-color: #796307;
+
+	--notice-tip-border-color: #74c0fc;
+	--notice-tip-background: #e7f5ff;
+	--notice-tip-color: #114a7f;
+
+	--docsify-example-panels-left-panel-width: 40%;
+
+	--docsify-example-panels-right-panel-width: 60%;
+}
+
+.markdown-section pre[data-lang] code {
+	border: solid 1px #e9ecef;
+}
+
+.markdown-section h2 a.anchor {
+	color: var(--link-color);
+}
+
+.markdown-section .tip strong,
+.markdown-section .warn strong {
+	color: inherit;
+}
+
+.docsify-example-panel.right-panel code {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>DLE-BlockPro</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content="Description">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#4b9fc5">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <meta name="msapplication-TileColor" content="#4b9fc5">
+  <meta name="msapplication-config" content="/assets/browserconfig.xml">
+  <meta name="theme-color" content="#4b9fc5">
+
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'DLE-BlockPro',
+      // logo: 'http://bp.pafnuty.name/images/logo2x.png',
+      themeColor: '#4e9cb5',
+      repo: 'https://github.com/dle-modules/DLE-BlockPro',
+      loadSidebar: true,
+      auto2top: true,
+
+      subMaxLevel: 2,
+      maxLevel: 4,
+
+      // complete configuration parameters
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Поиск',
+        noData: 'Ничего не нашлось!',
+        depth: 3,
+        hideOtherSidebarContent: true,
+        namespace: 'dle-block-pro',
+      },
+      copyCode: {
+        buttonText : 'Копировать код',
+        errorText  : 'Ошибка',
+        successText: 'Скопировано'
+      },
+
+      tabs: {
+        persist    : true,      // default
+        sync       : true,      // default
+        theme      : 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+
+      themeable: {
+        readyTransition : true, // default
+        responsiveTables: true  // default
+      },
+
+
+      // coverpage: true,
+      // onlyCover: false,
+     plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('raw.githubusercontent.com', 'github.com')
+                .replace(/\/master/, '/blob/master')
+            } else {
+              url =
+                'https://github.com/dle-modules/DLE-BlockPro-docs/blob/master/' +
+                vm.route.file
+            }
+            var editHtml = '[:memo: Редактировать](' + url + ')\n'
+
+            return editHtml + '\n' + html
+          })
+        }
+      ]
+    }
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2.1.0/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1.4.2/dist/docsify-tabs.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-example-panels@1.0.3/dist/docsify-example-panels.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0.8.1/dist/js/docsify-themeable.min.js"></script>
+ <!-- <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-smarty.min.js"></script>
+
+
+
+</body>
+</html>
+

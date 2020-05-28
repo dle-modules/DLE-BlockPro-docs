@@ -1,0 +1,18 @@
+{
+  "name": "dle-blockpro-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node ./node_modules/docsify-cli serve"
+  },
+  "author": "pafnuty10@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dle-modules/DLE-BlockPro"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "docsify-cli": "^4.4.0"
+  }
+}
