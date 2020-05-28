@@ -6,22 +6,15 @@ on:
 
 jobs:
   FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+    name: FTP-Deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 0
-    - name: Upload ftp
+    - name: Upload to FTP
       uses: sebastianpopp/ftp-action@releases/v2
       with:
         host: ${{ secrets.SERVER_ADDRESS }}
         user: ${{ secrets.SFTP_USER }}
         password: ${{ secrets.SFTP_PASSWORD }}
-        
-#                   host: ${{ secrets.SERVER_ADDRESS }}
-#           user: ${{ secrets.SFTP_USER }}
-#           password: ${{ secrets.SFTP_PASSWORD }}
-#           #private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-#           remote_path: ${{ secrets.SFTP_PATH }}
-#             ignore: .github/**,.gitignore,**/.gitignore,package.json,package-lock.json:  
