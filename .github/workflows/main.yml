@@ -5,20 +5,25 @@ on:
     branches: [ master ]
 
 jobs:
-  deploy_job:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-    name: deploy
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0      
-      - name: deploy files
-        uses:  swznd/sftp-deploy@master
-        with:
-          host: ${{ secrets.SERVER_ADDRESS }}
-          user: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          #private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          remote_path: ${{ secrets.SFTP_PATH }}
-          ignore: .github/**,.gitignore,**/.gitignore,package.json,package-lock.json
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1
+      with:
+        ftp_host: ${{ secrets.SERVER_ADDRESS }}
+        ftp_username: ${{ secrets.SFTP_USER }}
+        ftp_password: ${{ secrets.SFTP_PASSWORD }}
+        local_source_dir: /
+        dist_target_dir: ${{ secrets.SFTP_PATH }}
+        
+#                   host: ${{ secrets.SERVER_ADDRESS }}
+#           user: ${{ secrets.SFTP_USER }}
+#           password: ${{ secrets.SFTP_PASSWORD }}
+#           #private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           remote_path: ${{ secrets.SFTP_PATH }}
+#             ignore: .github/**,.gitignore,**/.gitignore,package.json,package-lock.json:  
