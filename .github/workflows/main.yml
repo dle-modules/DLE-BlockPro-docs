@@ -18,7 +18,6 @@ jobs:
         host: ${{ secrets.SERVER_ADDRESS }}
         user: ${{ secrets.SFTP_USER }}
         password: ${{ secrets.SFTP_PASSWORD }}
-        remoteDir: ${{ secrets.SFTP_PATH }}
         
 #                   host: ${{ secrets.SERVER_ADDRESS }}
 #           user: ${{ secrets.SFTP_USER }}
