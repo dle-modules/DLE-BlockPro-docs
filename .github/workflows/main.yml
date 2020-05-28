@@ -1,0 +1,23 @@
+name: CD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: deploy file
+        uses:  swznd/sftp-deploy@master
+        with:
+          host: ${{ secrets.IP_PROD_SERVER }}
+          user: username
+          private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          remote_path: /home/username/app
+          ignore: .github/**,.gitignore,**/.gitignore,package.json,package-lock.json
