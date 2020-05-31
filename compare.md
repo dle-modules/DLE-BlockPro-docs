@@ -14,8 +14,8 @@
 | по количеству комментариев | :heavy_check_mark: | :heavy_check_mark: |
 | по количеству скачиваний файлов новости | :heavy_check_mark: | :x: |
 | по символьному коду новости | :heavy_check_mark: | :x: |
-| по дате редактирования | :heavy_check_mark: | :x: |
-| по значению допполя | :heavy_check_mark: | :x: |
+| по дате редактирования | :heavy_check_mark: | :heavy_check_mark: |
+| по значению допполя | :heavy_check_mark: | :heavy_check_mark: |
 | по имени заголовка (по алфавиту) | :heavy_check_mark: | :heavy_check_mark: |
 | в случайном порядке | :heavy_check_mark: | :heavy_check_mark: |
 | топ новостей (как в теге {topnews}) | :heavy_check_mark: | :x: |
