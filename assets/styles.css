@@ -27,6 +27,8 @@
 
 .markdown-section pre[data-lang] code {
 	border: solid 1px #e9ecef;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 .markdown-section h2 a.anchor {
@@ -36,9 +38,4 @@
 .markdown-section .tip strong,
 .markdown-section .warn strong {
 	color: inherit;
-}
-
-.docsify-example-panel.right-panel code {
-	word-wrap: break-word;
-	white-space: pre-wrap;
 }
