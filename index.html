@@ -46,7 +46,7 @@
         noData: 'Ничего не нашлось!',
         depth: 3,
         hideOtherSidebarContent: true,
-        namespace: 'dle-block-pro',
+        namespace: 'dle-block-pro-603',
       },
       copyCode: {
         buttonText : 'Копировать код',
@@ -102,6 +102,10 @@
  <!-- <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-smarty.min.js"></script>
+
+  <script>
+    Prism.languages.tpl = Prism.languages['smarty'];
+  </script>
 
 </body>
 </html>

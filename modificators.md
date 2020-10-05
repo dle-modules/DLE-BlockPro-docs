@@ -21,7 +21,7 @@
 3. Жесткое ограничение символов. Если передать `true` не будет учитываться логический конц слова.
 
 <!-- div:right-panel -->
-```smarty
+```tpl
 Вывести 150 символов:
 {$el.short_story|limit:'150'}
 
@@ -62,7 +62,7 @@
 10. **(string) \$subdir** — Подпапка для картинок
 
 <!-- div:right-panel -->
-```smarty
+```tpl
 {$el.short_story|image:$noimage:'small':'1':'':'':'':true:false:'/uploads/myfolder'}
 
 {$el.full_story|image:$noimage:'intext':'all':'150x450':'':'landscape':true:false}
@@ -83,7 +83,7 @@
 Например: 1 коментарий, 2 комментария, 100 комментариев
 
 <!-- div:right-panel -->
-```smarty
+```tpl
 Выведет текст: 15 комментариев
 {$el.comm_num} {$el.comm_num|declination:'комментари|й|я|ев'} 
 ```
@@ -99,7 +99,7 @@
 Аналог `{date="D m Y"}`
 
 <!-- div:right-panel -->
-```smarty
+```tpl
 {$el.date|dateformat}
 
 {$el.date|dateformat:"d F Y"}
@@ -116,7 +116,7 @@
 В качестве параметра модификатор принимает цифру от 0 до 6, указывающую точность вывода от года до минут. По умолчанию установлено значение 2.
 
 <!-- div:right-panel -->
-```smarty
+```tpl
 Выведет результат: 
 2 года, 4 месяца, 1 неделю, 6 дней, 12 часов и 5 минут назад.
 {$el.date|timeago:6}
@@ -131,7 +131,7 @@
 Выводит информацию о категории или категориях, к которой принадлежит новость.
  
 <!-- div:right-panel -->
-```smarty
+```tpl
 Весь массив данных: 
 {$el.category|catinfo}
 
@@ -162,7 +162,7 @@ URL категории:
 Более детальную информацию о процедуре получения пользователей можно увидеть в шаблоне getuserinfo.tpl
 
 <!-- div:right-panel -->
-```smarty
+```tpl
 {set $users = []}
 
 {foreach $list as $el}
@@ -190,7 +190,7 @@ URL категории:
 
 Возвращает массив с найденными совпадениями или пустой массив.
 <!-- div:right-panel -->
-```smarty
+```tpl
 {foreach $list as $key => $el}
   {set $totalGifs = 0}
   {set $otherImages = 0}
@@ -221,6 +221,23 @@ URL категории:
 ```
 
 <!-- div:title-panel -->
+## sentence
+
+<!-- div:left-panel -->
+Выводит заданное количество предложений (до точки). 
+
+Иногда полезно для вывода завершенных предложений, а не слов.
+<!-- div:right-panel -->
+```tpl
+Выведет два первых предложения из краткой новости.:
+<pre>{$el.short_story|sentence:'2'}</pre>
+
+```
+
+<!-- panels:end -->
+
+
+<!-- div:title-panel -->
 ## dump
 
 <!-- div:left-panel -->
@@ -228,7 +245,7 @@ URL категории:
 
 Крайне полезно для отладки во время разработки шаблона.
 <!-- div:right-panel -->
-```smarty
+```tpl
 Выведет всё содержимое массива одной новости:
 <pre>{$el|dump}</pre>
 
